@@ -52,7 +52,7 @@
                     <li class="nav-item"><a class="link nav-item-extra" @click="$router.push('/mystore')"><div class="link-item d-none d-sm-flex"><span class=""><v-icon>mdi-home</v-icon>Миний дэлгүүр</span></div></a></li>
                     <li class="nav-item"><a class="link" href="#"><div class="link-item d-none d-lg-flex d-xl-none"><span>Мэдлэгийн сан</span></div></a></li>
                     <!-- <li class="nav-item"><a class="link" href="#"><div class="link-item"><span>Блог</span></div></a></li> -->
-                    <li class="nav-item"><a class="link" href="#"><div class="link-item d-none d-sm-flex"><span>Үйлчилгээ</span></div></a></li>
+                    <li class="nav-item"><a class="link" @click="$router.push('/service')"><div class="link-item d-none d-sm-flex"><span>Үйлчилгээ</span></div></a></li>
                     <li class="nav-item"><a class="link" href="#"><div class="link-item d-none d-lg-flex d-xl-none"><span>Хэрхэн ажилладаг</span></div></a></li>
                     <li class="nav-item"><a class="link" @click="$router.push('/products')"><div class="link-item d-none d-sm-flex"><span>Бүтээгдэхүүн</span></div></a></li>
                     <li class="logo"><a class="link" @click="$router.push('/')"><div class="link-item"><img src="~/assets/logo/printon.png" alt="printon-logo"></div></a></li>
