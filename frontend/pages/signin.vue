@@ -32,9 +32,9 @@
                     </div>
                   </div>
                     <div class="signin-btn">
-                        <v-btn class="signin-btn-item" color="#25BC3D" href="http://localhost:3000/products">Sign in</v-btn>
+                        <v-btn class="signin-btn-item" color="#25BC3D">Sign in</v-btn>
                     </div>
-                    <div class="subline center"> Шинэ хэрэглэгч үү? &nbsp;<a class="signup" href="http://localhost:3000/signup">Sign Up</a></div>
+                    <div class="subline center"> Шинэ хэрэглэгч үү? &nbsp;<a class="signup" @click="$router.push('/signup')">Sign Up</a></div>
               </div>
             <div class="image">     
             </div>

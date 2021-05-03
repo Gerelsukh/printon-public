@@ -6,28 +6,79 @@
           <div class="title">
             <v-icon size="40" @click="$router.push('/man-tshirt')">mdi-arrow-left-thick</v-icon>
             <p class="mr-2 mt-4">Unisex Jersey Short Sleeve V-Neck Tee</p>
-            <v-btn outlined>Edit</v-btn>
-            <v-btn outlined>Preview</v-btn>
+            <v-dialog
+                v-model="dialog"
+                persisten      
+                max-width="600px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    color="black"
+                    outlined
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    Preview
+                  </v-btn>
+                </template>
+                <v-card>
+                  <v-card-title>
+                    <span class="headline">Preview</span>
+                  </v-card-title>
+                  <v-card-text>
+                    <v-container>
+                      <v-row justify="center">
+                        <img src="~/assets/print/front-tshirt.png" style="width: 400px; height: 400px;">
+                      </v-row>
+                    </v-container>
+                    <small>*indicates required field</small>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      color="blue darken-1"
+                      text
+                      @click="dialog = false"
+                    >
+                      Close
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
           </div>
           <div class="print-area">
 
+            <v-btn outlined rounded class="mr-2 mt-5" @click="preview = image1">Урд хэсэг</v-btn>
+            <v-btn outlined rounded class="ml-2 mt-5" @click="preview = image2">Ард хэсэг</v-btn>
+          </div>
+          <div  class="print-area mt-5">
+            
             <!-- nemsem -->
 
             <div class="area">
-      <vue-resizable class="resizable" ref="resizableComponent"
-                     :dragSelector="dragSelector"
-                     :active="handlers" :fit-parent="fit" :maximize="maximize"
-                     :max-width="checkEmpty(maxW)" :max-height="checkEmpty(maxH)"
-                     :min-width="checkEmpty(minW)" :min-height="checkEmpty(minH)"
-                     :width="width" :height="height"
-                     :left="left" :top="top"
-                     @mount="eHandler"
-                     @resize:move="eHandler" @resize:start="eHandler" @resize:end="eHandler"
-                     @drag:move="eHandler" @drag:start="eHandler" @drag:end="eHandler" @maximize="eHandler"
-     >
-        <div class="block">
-          <div class="drag-area-1"><span>drag_1</span></div>
-          <div class="table-area">
+              <vue-resizable class="resizable" ref="resizableComponent"
+                            :dragSelector="dragSelector"
+                            :active="handlers" :fit-parent="fit" :maximize="maximize"
+                            :max-width="checkEmpty(maxW)" :max-height="checkEmpty(maxH)"
+                            :min-width="checkEmpty(minW)" :min-height="checkEmpty(minH)"
+                            :width="width" :height="height"
+                            :left="0" :top="0"
+                            @mount="eHandler"
+                            @resize:move="eHandler" @resize:start="eHandler" @resize:end="eHandler"
+                            @drag:move="eHandler" @drag:start="eHandler" @drag:end="eHandler" @maximize="eHandler"
+            >
+                <div class="block">
+                  <div class="drag-area-1" >
+                      <!-- <img v-if="preview == image1 && selectedFile" :src="selectedFile" 
+                      :aspect-ratio="16/9"
+                      :Width="Width"/> -->
+                      <v-img
+                        :aspect-ratio="16/9"
+                        :Width="Width"
+                        v-if="preview == image1 && selectedFile" :src="selectedFile" 
+                      ></v-img>
+                  </div>
+                        <div class="table-area">
             <table>
               <tr>
                 <td>w:{{ width }}</td>
@@ -40,21 +91,23 @@
             </table>
           </div>
           <div class="drag-area-2">drag_2</div>
-        </div>
-      </vue-resizable>
-    </div>
-
-            <v-btn outlined rounded class="mr-2 mt-5" @click="preview = image1">Урд хэсэг</v-btn>
-            <v-btn outlined rounded class="ml-2 mt-5" @click="preview = image2">Ард хэсэг</v-btn>
-          </div>
-          <div  class="print-area mt-5">
+                </div>
+      
+              </vue-resizable>
+               
+            </div>
             
-            <img v-if="preview == image1 && selectedFile" class="absolute-img" :src="selectedFile" />
             <img class="image1" :src="preview" />
             <br />
             
           </div>
-            
+            <v-slider
+                        v-model="width"
+                        class="align-self-stretch"
+                        min="200"
+                        max="500"
+                        step="1"
+                      ></v-slider>
         </v-col>
         <v-divider vertical></v-divider>
         <v-col cols="6" md="4">
@@ -87,10 +140,10 @@
               <br />Maximum file size 50MB
               <br />Recommended size 3600 × 4200 px
             </p>
-            <v-btn color="#25BC3D" href="http://localhost:3000/mystore">Add Brand</v-btn>
+            <v-btn color="#25BC3D" @click="$router.push('/mystore')">Add Brand</v-btn>
 
             <!-- nemsen -->
-            <div class="area table-block">
+            <div class="area1 table-block">
       <div class="table-row">
         <div><h4>handlers:</h4></div>
         <span v-for="handler in ['r', 'rb', 'b', 'lb', 'l', 'lt', 't', 'rt']" :key="handler">
@@ -169,9 +222,12 @@ export default {
     preview: null,
     image1: Front,
     image2: Back,
+    Width: 150,
+    Height:150,
+    dialog: false,
 
     handlers: ['r', 'rb', 'b', 'lb', 'l', 'lt', 't', 'rt'],
-    left: `calc( 50% - ${tW / 2}px)`, top: `calc(50% - ${tH / 2}px)`,
+    left: `0px`, top: `0px`,
     height: tH, width: tW,
     maxW: 250, maxH: 250,
     minW: 100, minH: 100,
@@ -243,7 +299,6 @@ export default {
 .block {
   height: 100%;
   width: 100%;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -251,6 +306,9 @@ export default {
 }
 </style>
 <style>
+.v-image__image--cover {
+  background-size: contain;
+}
 .title {
   width: auto;
   height: 50px;
@@ -269,6 +327,7 @@ export default {
 .image1 {
   width: 404px;
   height: 384px;
+  z-index: 0;
 }
 .print-area {
   display: flex;
@@ -278,10 +337,6 @@ export default {
   position: relative;
 }
 .absolute-img {
-  position: absolute;
-  top: 20;
-  margin-top: 50px;
-  margin-right: 10px;
   width: 150px;
   height: 150px;
 }
@@ -291,33 +346,41 @@ export default {
 }
 
 
-.area {
-  width: 300px;
-  height: 300px;
+.area1 {
+  width: 250px;
+  height: 250px;
   display: inline-block;
   border: 1px solid #dddddd;
   background: #ffffff;
   color: #333333;;
   float: left;
   margin: 10px;
-
 }
 
+.area {
+  position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: #333333;
+    float: left;
+    margin: 10px;
+
+}
+/* 
 #block1 {
   border: solid black 1px;
   height: 300px;
   width: 300px;
   display: inline-block;
   float: left;
-}
+} */
 
 .resizable {
-  background-position: top left;
   width: 150px;
   height: 150px;
   padding: 0;
-  border: 1px solid #003eff;
-  background: #007fff;
   font-weight: normal;
   color: #ffffff;
   position: relative;
@@ -343,15 +406,13 @@ export default {
 
 .drag-area-1, .drag-area-2 {
   width: 100%;
-  height: 20px;
-  background: red;
+  height: 100%;
   color: white;
   text-align: center;
   cursor: pointer;
 }
 
 .table-area {
-  flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;

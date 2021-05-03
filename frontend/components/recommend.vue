@@ -186,7 +186,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .v-chip {
         position: absolute;
         top: 5px;

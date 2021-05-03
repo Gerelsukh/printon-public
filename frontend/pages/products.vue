@@ -286,7 +286,7 @@
                                 </v-list-item>
                       </v-card>
                   </v-col>
-                  <v-col class="ml-n16">
+                  <v-col class="">
                           <v-card
                                 class="mx-auto"
                                 max-width="344"
@@ -363,5 +363,5 @@ export default {
 .product-container{
     width: 100%;
     height: auto;
-}
+}   
 </style>

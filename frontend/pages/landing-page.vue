@@ -10,6 +10,7 @@
                     <div class="sub-headline">
                         <p>Шинэлэг загвар, түргэн үйлчилгээ</p>
                     </div>                    
+                    <!-- href="http://localhost:3000/products" -->
                     <div class="signin-btn">
                         <v-btn class="signup-btn-item" color="#25BC3D" href="http://localhost:3000/products">Бренд үүсгэх</v-btn>
                     </div>
@@ -172,7 +173,7 @@
           </v-row>
         </v-container>
       <div class="all-product-btn">
-      <v-btn outlined color="black">Бүх бүтээгдэхүүн</v-btn>
+      <v-btn outlined color="black" @click="$router.push('/products')">Бүх бүтээгдэхүүн</v-btn>
       </div>
     </div>
 

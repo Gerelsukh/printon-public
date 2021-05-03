@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .copy {
     padding-top: 5px;
     padding-left: 5px;
@@ -99,5 +99,9 @@ h3 {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+}
+img {
+  height: 52px;
+  width: 204px;
 }
 </style>

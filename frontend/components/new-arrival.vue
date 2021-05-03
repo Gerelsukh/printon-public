@@ -186,7 +186,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .new-title {
         display: flex;
         flex-direction: row;

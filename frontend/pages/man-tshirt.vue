@@ -12,7 +12,7 @@
                     prepend-inner-icon="mdi-magnify"
                     placeholder="Бараа, бүтээгдэхүүн, төрлөөр хайх"
                     outlined
-                    color="#25BC3D"
+                    color="#25BC3D" 
                     background-color="#F5F5F5"
                ></v-text-field>
                   </v-col>
@@ -25,7 +25,7 @@
                 <v-col
                     cols="5"
                 >
-                    <nav class="nav"><a class="links" href="http://localhost:3000/products">Төрөл/</a><a class="links" href="http://localhost:3000/category">&nbsp;Эрэгтэй Xувцас/</a><a class="links"><span class="current-link">&nbsp;Подволк</span></a></nav>
+                    <nav class="nav"><a class="links" @click="$router.push('/products')">Төрөл/</a><a class="links" @click="$router.push('/category')">&nbsp;Эрэгтэй Xувцас/</a><a class="links"><span class="current-link">&nbsp;Подволк</span></a></nav>
                 </v-col>
                 </v-row>
             </v-container>
@@ -34,7 +34,7 @@
                 <v-row
                 no-gutters
                 >
-                <v-col class="ml-n5">
+                <v-col class="">
                     <h3>T-Shirt</h3>
                 </v-col>
                 <v-col>
@@ -56,58 +56,70 @@
                     cols="5"                    
                     md="3"
                 >
-                <v-list dense>
-                    <v-header>Размер</v-header>
-                    <v-list-item-group
-                        v-model="selectedItem"
-                        color="primary"
+                <v-expansion-panels
+                    v-model="panel"
+                    :disabled="disabled"
+                    multiple
                     >
-                            <v-checkbox
-                            label="2XS"
-                            color="#25BC3D"
-                            value="2XS"
-                            hide-details
-                            ></v-checkbox>
-                            <v-checkbox
-                            label="XS"
-                            color="#25BC3D"
-                            value="XS"
-                            hide-details
-                            ></v-checkbox>
-                            <v-checkbox
-                            label="S"
-                            color="#25BC3D"
-                            value="S"
-                            hide-details
-                            ></v-checkbox>
-                            <v-checkbox
-                            label="M"
-                            color="#25BC3D"
-                            value="M"
-                            hide-details
-                            ></v-checkbox>
-                            <v-checkbox
-                            label="L"
-                            color="#25BC3D"
-                            value="L"
-                            hide-details
-                            ></v-checkbox>
-                            <v-checkbox
-                            label="XL"
-                            color="#25BC3D"
-                            value="XL"
-                            hide-details
-                            ></v-checkbox>
-                            <v-checkbox
-                            label="2XL"
-                            color="#25BC3D"
-                            value="2XL"
-                            hide-details
-                            ></v-checkbox>
-                    </v-list-item-group>                    
-                </v-list>
-                <v-divider ></v-divider>
-                <v-list dense>
+                    <v-expansion-panel>
+                        <v-expansion-panel-header>Размер</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                        <v-list dense>
+                                    <v-header>Размер</v-header>
+                                    <v-list-item-group
+                                        v-model="selectedItem"
+                                        color="primary"
+                                    >
+                                            <v-checkbox
+                                            label="2XS"
+                                            color="#25BC3D"
+                                            value="2XS"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="XS"
+                                            color="#25BC3D"
+                                            value="XS"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="S"
+                                            color="#25BC3D"
+                                            value="S"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="M"
+                                            color="#25BC3D"
+                                            value="M"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="L"
+                                            color="#25BC3D"
+                                            value="L"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="XL"
+                                            color="#25BC3D"
+                                            value="XL"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="2XL"
+                                            color="#25BC3D"
+                                            value="2XL"
+                                            hide-details
+                                            ></v-checkbox>
+                                    </v-list-item-group>                    
+                                </v-list>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+                    <v-expansion-panel>
+                        <v-expansion-panel-header>Хэвлэх хэсэг</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                         <v-list dense>
                     <v-header>Хэвлэх хэсэг</v-header>
                     <v-list-item-group
                         v-model="selectedItem"
@@ -157,7 +169,16 @@
                             ></v-checkbox>
                     </v-list-item-group>                    
                 </v-list>
-                <v-divider ></v-divider>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+
+                    <v-expansion-panel>
+                        <v-expansion-panel-header>Panel 3</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                        Some content
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+                    </v-expansion-panels>
                 </v-col>
                 <v-col
                     cols="13"
@@ -314,6 +335,10 @@ export default {
     },
     data: () => ({
       items: ['Шинэ', 'Их үнэ', 'Бага үнэ'],
+      panel: [0, 1, 2],
+      disabled: false,
+      readonly: false,
+
     }),
 }
 </script>

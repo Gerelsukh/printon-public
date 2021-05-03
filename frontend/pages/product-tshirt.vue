@@ -86,7 +86,7 @@
                         <br>Хэмжээ алдахгүй
                     </v-list-item-content>                    
                 </v-list-item>
-                <v-btn class="ml-5" color="#25BC3D" href="http://localhost:3000/print">Customise</v-btn>
+                <v-btn class="ml-5" color="#25BC3D" @click="$router.push('/print')">Customise</v-btn>
                 </v-list>
               </v-col>
           </v-row>

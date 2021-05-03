@@ -38,7 +38,7 @@
                         <v-btn class="signup-btn-item" color="#25BC3D">Sign up</v-btn>
                     </div>
                     <div class="message"><p>Бүртгүүлснээр PrintOn-ийн <a class="message1" href="#">Үйлчилгээний нөхцөл</a>, <a class="message1" href="#">Нууцлалын бодлого</a>, <a class="message1" href="#">Оюуны өмчийн бодлогыг</a> зөвшөөрч байгаа болно.</p></div>
-                    <div class="subline center"> Бүртгэлтэй юу? &nbsp;<a class="signup" href="http://localhost:3000/signin">Sign In</a></div>
+                    <div class="subline center"> Бүртгэлтэй юу? &nbsp;<a class="signup" @click="$router.push('/signin')">Sign In</a></div>
               </div>
             <div class="image">     
             </div>

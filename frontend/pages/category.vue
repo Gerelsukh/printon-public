@@ -29,7 +29,7 @@
                                 class="mx-auto"
                                 max-width="344"
                                 outlined
-                                @click.native="doSometcategoryng()"
+                                @click="$router.push('/man-tshirt')"
                                 color="#F7F7F7"
                             >
                                 <v-list-item three-line>
@@ -49,7 +49,7 @@
                                 class="mx-auto"
                                 max-width="344"
                                 outlined
-                                @click.native="doSometcategoryng()"
+                                @click="$router.push('/man-tshirt')"
                                 color="#F7F7F7"
                             >
                                 <v-list-item three-line>
@@ -71,7 +71,7 @@
                                 class="mx-auto"
                                 max-width="344"
                                 outlined
-                                @click.native="doSometcategoryng()"
+                                @click="$router.push('/man-tshirt')"
                                 color="#F7F7F7"
                             >
                                 <v-list-item three-line>
@@ -90,7 +90,7 @@
                                 class="mx-auto"
                                 max-width="344"
                                 outlined
-                                @click.native="doSometcategoryng()"
+                                @click="$router.push('/man-tshirt')"
                                 color="#F7F7F7"
                             >
                                 <v-list-item three-line>
@@ -109,7 +109,7 @@
                                 class="mx-auto"
                                 max-width="344"
                                 outlined
-                                @click.native="doSometcategoryng()"
+                                @click="$router.push('/man-tshirt')"
                                 color="#F7F7F7"
                             >
                                 <v-list-item three-line>
@@ -137,7 +137,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .category {
     width: 150px;
     height: 150px;
