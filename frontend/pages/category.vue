@@ -2,7 +2,7 @@
   <div>
       <Headerdef/>
 
-      <v-container class="mt-8">
+      <v-container class="container">
               <v-row>
                   <v-col>
                           <v-card
@@ -138,6 +138,9 @@ export default {
 </script>
 
 <style scoped>
+.header + .container {
+    margin-top: 100px;
+}
 .category {
     width: 150px;
     height: 150px;

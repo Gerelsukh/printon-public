@@ -318,7 +318,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .feature-desc {
   font-weight: 700;
   font-size: 20px;

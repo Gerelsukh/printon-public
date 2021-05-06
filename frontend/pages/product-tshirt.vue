@@ -2,7 +2,7 @@
   <div>
       <Headerdef/>
 
-      <v-container class="mt-4">
+      <v-container class="container">
         <v-row no-gutters>
               <v-col 
                 cols="12"
@@ -220,7 +220,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.header + .container {
+    margin-top: 100px;
+}
 .size {
     width: 650px;
     height: 250px;

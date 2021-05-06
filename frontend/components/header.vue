@@ -28,7 +28,7 @@
                                 </v-list-item>
 
                                 <v-list-item>
-                                    <v-list-item-title><a class="link" href="#"><div class="slider"><span>Хэрхэн ажилладаг</span></div></a></v-list-item-title>
+                                    <v-list-item-title><a class="link" @click="$router.push('/how-it-works')"><div class="slider"><span>Хэрхэн ажилладаг</span></div></a></v-list-item-title>
                                 </v-list-item>
 
                                 <v-list-item>
@@ -53,7 +53,7 @@
                     <li class="nav-item"><a class="link" href="#"><div class="link-item d-none d-lg-flex d-xl-none"><span>Мэдлэгийн сан</span></div></a></li>
                     <!-- <li class="nav-item"><a class="link" href="#"><div class="link-item"><span>Блог</span></div></a></li> -->
                     <li class="nav-item"><a class="link" @click="$router.push('/service')"><div class="link-item d-none d-sm-flex"><span>Үйлчилгээ</span></div></a></li>
-                    <li class="nav-item"><a class="link" href="#"><div class="link-item d-none d-lg-flex d-xl-none"><span>Хэрхэн ажилладаг</span></div></a></li>
+                    <li class="nav-item"><a class="link" @click="$router.push('/how-it-works')"><div class="link-item d-none d-lg-flex d-xl-none"><span>Хэрхэн ажилладаг</span></div></a></li>
                     <li class="nav-item"><a class="link" @click="$router.push('/products')"><div class="link-item d-none d-sm-flex"><span>Бүтээгдэхүүн</span></div></a></li>
                     <li class="logo"><a class="link" @click="$router.push('/')"><div class="link-item"><img src="~/assets/logo/printon.png" alt="printon-logo"></div></a></li>
                 </ul>
@@ -132,6 +132,11 @@ export default {
     height: 80px;
     width: 100%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
 }
 .hcontainer {
     margin: auto;

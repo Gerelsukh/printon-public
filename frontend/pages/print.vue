@@ -304,9 +304,8 @@ export default {
   justify-content: center;
   align-items: center;
 }
-</style>
-<style>
-.v-image__image--cover {
+
+ .v-image__image--cover {
   background-size: contain;
 }
 .title {

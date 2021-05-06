@@ -343,7 +343,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .v-select {
     width: 250px;
 }

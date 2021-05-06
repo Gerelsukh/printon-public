@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header/>
+    <div class="container"></div>
     <div class="lcontainer1">
         <div class="form">
                 <div class="">
@@ -319,6 +320,9 @@ export default {
 </script>
 
 <style scoped>
+ .header + .container{
+  margin-top: 80px;
+}
 .feature-desc {
   font-weight: 700;
   font-size: 20px;

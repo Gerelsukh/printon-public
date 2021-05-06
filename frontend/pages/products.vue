@@ -331,7 +331,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .v-chip.complete {
     background: rgb(255,215,0)!important;
 }

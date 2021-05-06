@@ -2,7 +2,7 @@
   <div>
       <Headerdef/>
 
-    <v-container>
+    <v-container class="container">
         <v-row no-gutters>
             <v-col>
                 <div class="title-div">
@@ -202,6 +202,9 @@ export default {
 </script>
 
 <style scoped>
+.header + .container {
+    margin-top: 100px;
+}
 .question{
     font-family: 'Roboto';
     font-size: 25px;

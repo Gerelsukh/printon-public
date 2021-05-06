@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .myorder {
     display: flex;
     flex-direction: row;
