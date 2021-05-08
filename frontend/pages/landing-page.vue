@@ -12,7 +12,7 @@
                     </div>                    
                     <!-- href="http://localhost:3000/products" -->
                     <div class="signin-btn">
-                        <v-btn class="signup-btn-item" color="#25BC3D" href="http://localhost:3000/products">Бренд үүсгэх</v-btn>
+                        <v-btn class="signup-btn-item" color="#25BC3D" href="/products">Бренд үүсгэх</v-btn>
                     </div>
                     <div class="subline"> &nbsp; Үнэгүй - Хялбар - 100+ Бүтээгдэхүүн</div>
               </div>
@@ -173,7 +173,7 @@
           </v-row>
         </v-container>
       <div class="all-product-btn">
-      <v-btn outlined color="black" @click="$router.push('/products')">Бүх бүтээгдэхүүн</v-btn>
+      <v-btn outlined color="black" href="/products">Бүх бүтээгдэхүүн</v-btn>
       </div>
     </div>
 

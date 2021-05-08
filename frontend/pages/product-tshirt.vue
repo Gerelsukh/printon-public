@@ -18,7 +18,7 @@
                         width="60"
                         height="60"
                         >
-                    <img class="detailimg" src="~/assets/recommend/hoodie.png">
+                    <img class="detailimg" src="~/assets/products-detail/tshirt.png">
                     </v-card>
 
                     <v-card
@@ -28,7 +28,7 @@
                         width="60"
                         height="60"
                         >
-                    <img class="detailimg" src="~/assets/recommend/hoodie.png">
+                    <img class="detailimg" src="~/assets/products-detail/tshirt.png">
                     </v-card>
 
                     <v-card
@@ -38,7 +38,7 @@
                         width="60"
                         height="60"
                         >
-                    <img class="detailimg" src="~/assets/recommend/hoodie.png">
+                    <img class="detailimg" src="~/assets/products-detail/tshirt.png">
                     </v-card>
 
                     <v-card
@@ -48,7 +48,7 @@
                         width="60"
                         height="60"
                         >
-                    <img class="detailimg" src="~/assets/recommend/hoodie.png">
+                    <img class="detailimg" src="~/assets/products-detail/tshirt.png">
                     </v-card>
 
                 </div>
@@ -60,7 +60,7 @@
                         width="400"
                         height="400"
                         >
-                    <img class="mainimg" src="~/assets/recommend/hoodie.png">
+                    <img class="mainimg" src="~/assets/products-detail/tshirt.png">
                     </v-card>
                 </div>
                 </div>
@@ -86,7 +86,7 @@
                         <br>Хэмжээ алдахгүй
                     </v-list-item-content>                    
                 </v-list-item>
-                <v-btn class="ml-5" color="#25BC3D" @click="$router.push('/print')">Customise</v-btn>
+                <v-btn class="ml-5" color="#25BC3D" href="/print">Customise</v-btn>
                 </v-list>
               </v-col>
           </v-row>

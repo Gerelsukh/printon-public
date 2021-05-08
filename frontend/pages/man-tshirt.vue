@@ -25,7 +25,7 @@
                 <v-col
                     cols="5"
                 >
-                    <nav class="nav"><a class="links" @click="$router.push('/products')">Төрөл/</a><a class="links" @click="$router.push('/category')">&nbsp;Эрэгтэй Xувцас/</a><a class="links"><span class="current-link">&nbsp;Подволк</span></a></nav>
+                    <nav class="nav"><a class="links" href="/products">Төрөл/</a><a class="links" href="category">&nbsp;Эрэгтэй Xувцас/</a><a class="links"><span class="current-link">&nbsp;Подволк</span></a></nav>
                 </v-col>
                 </v-row>
             </v-container>
@@ -62,10 +62,56 @@
                     multiple
                     >
                     <v-expansion-panel>
+                        <v-expansion-panel-header>Өнгө</v-expansion-panel-header>
+                        <v-expansion-panel-content>
+                        <v-list dense>
+                                    <v-list-item-group
+                                        v-model="selectedItem"
+                                        color="primary"
+                                    >
+                                           <v-radio-group
+                                            v-model="ex7"
+                                            column
+                                            >
+                                            <v-radio
+                                                label="White"
+                                                color="white"
+                                                value="White"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="Light gray"
+                                                color="light gray"
+                                                value="Light gray"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="Black"
+                                                color="black"
+                                                value="Black"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="Red"
+                                                color="red"
+                                                value="Red"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="orange"
+                                                color="orange"
+                                                value="orange"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="yellow"
+                                                color="yellow"
+                                                value="yellow"
+                                            ></v-radio>
+                                            </v-radio-group>
+                                    </v-list-item-group>                    
+                                </v-list>
+                        </v-expansion-panel-content>
+                    </v-expansion-panel>
+                    <v-expansion-panel>
                         <v-expansion-panel-header>Размер</v-expansion-panel-header>
                         <v-expansion-panel-content>
                         <v-list dense>
-                                    <v-header>Размер</v-header>
                                     <v-list-item-group
                                         v-model="selectedItem"
                                         color="primary"
@@ -120,7 +166,6 @@
                         <v-expansion-panel-header>Хэвлэх хэсэг</v-expansion-panel-header>
                         <v-expansion-panel-content>
                          <v-list dense>
-                    <v-header>Хэвлэх хэсэг</v-header>
                     <v-list-item-group
                         v-model="selectedItem"
                         color="primary"
@@ -172,12 +217,7 @@
                         </v-expansion-panel-content>
                     </v-expansion-panel>
 
-                    <v-expansion-panel>
-                        <v-expansion-panel-header>Panel 3</v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                        Some content
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
+
                     </v-expansion-panels>
                 </v-col>
                 <v-col
@@ -186,139 +226,273 @@
                     md="9"
                 >
                 <v-container>
-              <v-row>
-                  <v-col>
-                      <v-card
-                            tile
-                            class="mx-auto"
-                            max-width="260"
-                            height="400"
-                            @click="$router.push('/product-tshirt')"
-                            >
-                                <v-chip
-                                class="ma-2 chip"
-                                label
-                                outlined
-                                text-color="black"
+                <v-row>
+                    <v-col>
+                        <v-card
+                                tile
+                                class="mx-auto"
+                                max-width="260"
+                                height="400"
+                                href="/product-tshirt"
                                 >
-                                Шинэ
-                                </v-chip>
-                        <img class="recommend"
-                            src="~/assets/recommend/hoodie.png"
-                        >
-                        <v-card-title>Hoodie</v-card-title>
-                        <v-card-text>
-                            <v-row
-                                align="center"
-                                class="mx-0"
+                                    <v-chip
+                                    class="ma-2 chip"
+                                    label
+                                    outlined
+                                    text-color="black"
+                                    >
+                                    Шинэ
+                                    </v-chip>
+                            <img class="recommend"
+                                src="~/assets/products-detail/tshirt.png"
                             >
-                                <v-rating
-                                :value="4.5"
-                                color="amber"
-                                dense
-                                half-increments
-                                readonly
-                                size="14"
-                                ></v-rating>
-
-                                <div class="grey--text ml-4">
-                                4.5 (413)
-                                </div>
-                            </v-row>
-
-                            <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
-                            </v-card-text>
-                        </v-card>
-                  </v-col>
-                  
-                <v-col>
-                      <v-card
-                            tile
-                            class="mx-auto"
-                            max-width="260"
-                            height="400"
-                            @click="$router.push('/product-tshirt')"
-                            >
-                                <v-chip
-                                class="ma-2 chip"
-                                label
-                                outlined
-                                text-color="black"
+                            <v-card-title>T-Shirt</v-card-title>
+                            <v-card-text>
+                                <v-row
+                                    align="center"
+                                    class="mx-0"
                                 >
-                                Шинэ
-                                </v-chip>
-                        <img class="recommend"
-                            src="~/assets/recommend/hoodie.png"
-                        >
-                        <v-card-title>Hoodie</v-card-title>
-                        <v-card-text>
-                            <v-row
-                                align="center"
-                                class="mx-0"
-                            >
-                                <v-rating
-                                :value="4.5"
-                                color="amber"
-                                dense
-                                half-increments
-                                readonly
-                                size="14"
-                                ></v-rating>
+                                    <v-rating
+                                    :value="4.5"
+                                    color="amber"
+                                    dense
+                                    half-increments
+                                    readonly
+                                    size="14"
+                                    ></v-rating>
 
-                                <div class="grey--text ml-4">
-                                4.5 (413)
-                                </div>
-                            </v-row>
+                                    <div class="grey--text ml-4">
+                                    4.5 (413)
+                                    </div>
+                                </v-row>
 
-                            <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
-                            </v-card-text>
-                        </v-card>
-                  </v-col>
-
-                  <v-col>
-                      <v-card
-                            tile
-                            class="mx-auto"
-                            max-width="260"
-                            height="400"
-                            @click="$router.push('/product-tshirt')"
-                            >
-                                <v-chip
-                                class="ma-2 chip"
-                                label
-                                outlined
-                                text-color="black"
+                                <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                                </v-card-text>
+                            </v-card>
+                    </v-col>
+                    
+                    <v-col>
+                        <v-card
+                                tile
+                                class="mx-auto"
+                                max-width="260"
+                                height="400"
+                                href="/product-tshirt"
                                 >
-                                Шинэ
-                                </v-chip>
-                        <img class="recommend"
-                            src="~/assets/recommend/hoodie.png"
-                        >
-                        <v-card-title>Hoodie</v-card-title>
-                        <v-card-text>
-                            <v-row
-                                align="center"
-                                class="mx-0"
+                                    <v-chip
+                                    class="ma-2 chip"
+                                    label
+                                    outlined
+                                    text-color="black"
+                                    >
+                                    Шинэ
+                                    </v-chip>
+                            <img class="recommend"
+                                src="~/assets/products-detail/tshirt.png"
                             >
-                                <v-rating
-                                :value="4.5"
-                                color="amber"
-                                dense
-                                half-increments
-                                readonly
-                                size="14"
-                                ></v-rating>
+                            <v-card-title>T-Shirt</v-card-title>
+                            <v-card-text>
+                                <v-row
+                                    align="center"
+                                    class="mx-0"
+                                >
+                                    <v-rating
+                                    :value="4.5"
+                                    color="amber"
+                                    dense
+                                    half-increments
+                                    readonly
+                                    size="14"
+                                    ></v-rating>
 
-                                <div class="grey--text ml-4">
-                                4.5 (413)
-                                </div>
-                            </v-row>
+                                    <div class="grey--text ml-4">
+                                    4.5 (413)
+                                    </div>
+                                </v-row>
 
-                            <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
-                            </v-card-text>
-                        </v-card>
-                  </v-col>
-              </v-row>
+                                <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                                </v-card-text>
+                            </v-card>
+                    </v-col>
+
+                    <v-col>
+                        <v-card
+                                tile
+                                class="mx-auto"
+                                max-width="260"
+                                height="400"
+                                href="/product-tshirt"
+                                >
+                                    <v-chip
+                                    class="ma-2 chip"
+                                    label
+                                    outlined
+                                    text-color="black"
+                                    >
+                                    Шинэ
+                                    </v-chip>
+                            <img class="recommend"
+                                src="~/assets/products-detail/tshirt.png"
+                            >
+                            <v-card-title>T-Shirt</v-card-title>
+                            <v-card-text>
+                                <v-row
+                                    align="center"
+                                    class="mx-0"
+                                >
+                                    <v-rating
+                                    :value="4.5"
+                                    color="amber"
+                                    dense
+                                    half-increments
+                                    readonly
+                                    size="14"
+                                    ></v-rating>
+
+                                    <div class="grey--text ml-4">
+                                    4.5 (413)
+                                    </div>
+                                </v-row>
+
+                                <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                                </v-card-text>
+                            </v-card>
+                    </v-col>
+                </v-row>
+
+                 <v-row>
+                    <v-col>
+                        <v-card
+                                tile
+                                class="mx-auto"
+                                max-width="260"
+                                height="400"
+                                href="/product-tshirt"
+                                >
+                                    <v-chip
+                                    class="ma-2 chip"
+                                    label
+                                    outlined
+                                    text-color="black"
+                                    >
+                                    Шинэ
+                                    </v-chip>
+                            <img class="recommend"
+                                src="~/assets/products-detail/tshirt.png"
+                            >
+                            <v-card-title>T-Shirt</v-card-title>
+                            <v-card-text>
+                                <v-row
+                                    align="center"
+                                    class="mx-0"
+                                >
+                                    <v-rating
+                                    :value="4.5"
+                                    color="amber"
+                                    dense
+                                    half-increments
+                                    readonly
+                                    size="14"
+                                    ></v-rating>
+
+                                    <div class="grey--text ml-4">
+                                    4.5 (413)
+                                    </div>
+                                </v-row>
+
+                                <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                                </v-card-text>
+                            </v-card>
+                    </v-col>
+                    
+                    <v-col>
+                        <v-card
+                                tile
+                                class="mx-auto"
+                                max-width="260"
+                                height="400"
+                                href="/product-tshirt"
+                                >
+                                    <v-chip
+                                    class="ma-2 chip"
+                                    label
+                                    outlined
+                                    text-color="black"
+                                    >
+                                    Шинэ
+                                    </v-chip>
+                            <img class="recommend"
+                                src="~/assets/products-detail/tshirt.png"
+                            >
+                            <v-card-title>T-Shirt</v-card-title>
+                            <v-card-text>
+                                <v-row
+                                    align="center"
+                                    class="mx-0"
+                                >
+                                    <v-rating
+                                    :value="4.5"
+                                    color="amber"
+                                    dense
+                                    half-increments
+                                    readonly
+                                    size="14"
+                                    ></v-rating>
+
+                                    <div class="grey--text ml-4">
+                                    4.5 (413)
+                                    </div>
+                                </v-row>
+
+                                <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                                </v-card-text>
+                            </v-card>
+                    </v-col>
+
+                    <v-col>
+                        <v-card
+                                tile
+                                class="mx-auto"
+                                max-width="260"
+                                height="400"
+                                href="/product-tshirt"
+                                >
+                                    <v-chip
+                                    class="ma-2 chip"
+                                    label
+                                    outlined
+                                    text-color="black"
+                                    >
+                                    Шинэ
+                                    </v-chip>
+                            <img class="recommend"
+                                src="~/assets/products-detail/tshirt.png"
+                            >
+                            <v-card-title>T-Shirt</v-card-title>
+                            <v-card-text>
+                                <v-row
+                                    align="center"
+                                    class="mx-0"
+                                >
+                                    <v-rating
+                                    :value="4.5"
+                                    color="amber"
+                                    dense
+                                    half-increments
+                                    readonly
+                                    size="14"
+                                    ></v-rating>
+
+                                    <div class="grey--text ml-4">
+                                    4.5 (413)
+                                    </div>
+                                </v-row>
+
+                                <div class="mt-2">Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+                                </v-card-text>
+                            </v-card>
+                    </v-col>
+                </v-row>
           </v-container>
                 </v-col>
                 </v-row>
@@ -344,6 +518,9 @@ export default {
 </script>
 
 <style scoped>
+.header + .man-tshirt-container {
+    margin-top: 100px;
+}
 .v-select {
     width: 250px;
 }

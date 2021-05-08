@@ -13,7 +13,7 @@
                     </div>                    
                     <!-- href="http://localhost:3000/products" -->
                     <div class="signin-btn">
-                        <v-btn class="signup-btn-item" color="#25BC3D" @click="$router.push('/products')">Бренд үүсгэх</v-btn>
+                        <v-btn class="signup-btn-item" color="#25BC3D" href="/products">Бренд үүсгэх</v-btn>
                     </div>
                     <div class="subline"> &nbsp; Үнэгүй - Хялбар - 100+ Бүтээгдэхүүн</div>
               </div>
@@ -82,7 +82,7 @@
         height="320"
         >
       <img class="whatchucan"
-        src="~/assets/Landing-page/house.jpg"
+        src="~/assets/Landing-page/house.png"
         height="200px"
       >
 
@@ -174,7 +174,7 @@
           </v-row>
         </v-container>
       <div class="all-product-btn">
-      <v-btn outlined color="black" @click="$router.push('/products')">Бүх бүтээгдэхүүн</v-btn>
+      <v-btn outlined color="black" href="/products">Бүх бүтээгдэхүүн</v-btn>
       </div>
     </div>
 
@@ -265,43 +265,7 @@
 
     <div class="lcontainer6">
       <div class="title"><h2>Үйлчлүүлэгчдийн бүтээсэн Бренд</h2></div>
-          <v-sheet
-        class="mx-auto"
-        elevation="8"
-        max-width="800"
-      >
-        <v-slide-group
-          v-model="model"
-          class="pa-4"
-          show-arrows
-        >
-          <v-slide-item
-            v-for="n in 15"
-            :key="n"
-          >
-            <v-card
-              :color="active ? undefined : 'grey lighten-1'"
-              class="ma-4"
-              height="200"
-              width="100"
-            >
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                <v-scale-transition>
-                  <v-icon
-                    v-if="active"
-                    size="48"
-                    v-text="'mdi-close-circle-outline'"
-                  ></v-icon>
-                </v-scale-transition>
-              </v-row>
-            </v-card>
-          </v-slide-item>
-        </v-slide-group>
-      </v-sheet>
+          
     </div>
     <Footer/>
   </div>
@@ -322,6 +286,9 @@ export default {
 <style scoped>
  .header + .container{
   margin-top: 80px;
+}
+.customer {
+  border: 1px solid #c7c7c7 !important;
 }
 .feature-desc {
   font-weight: 700;

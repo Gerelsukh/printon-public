@@ -4,7 +4,8 @@
       <v-row>
         <v-col cols="12" sm="6" md="8">
           <div class="title">
-            <v-icon size="40" @click="$router.push('/man-tshirt')">mdi-arrow-left-thick</v-icon>
+            <!-- @click="$router.push('/man-tshirt')" -->
+            <v-icon size="40" href="">mdi-arrow-left-thick</v-icon>
             <p class="mr-2 mt-4">Unisex Jersey Short Sleeve V-Neck Tee</p>
             <v-dialog
                 v-model="dialog"
@@ -12,14 +13,142 @@
                 max-width="600px"
               >
                 <template v-slot:activator="{ on, attrs }">
-                  <v-btn
-                    color="black"
-                    outlined
-                    v-bind="attrs"
-                    v-on="on"
-                  >
-                    Preview
-                  </v-btn>
+                  <div class="float">
+                      <v-btn
+                        color="black"
+                        outlined
+                        v-bind="attrs"
+                        v-on="on"
+                      >
+                        Preview
+                      </v-btn>
+                      <v-icon @click.stop="drawer = !drawer" >mdi-keyboard-settings</v-icon>
+                        <v-navigation-drawer
+                            v-model="drawer"
+                            absolute
+                            :permanent="false"
+                            temporary
+                            right
+                            class="d-flex flex-row-reverse"
+                            width="500"
+                            >
+                            <v-list
+                            width="500"
+                            class="mt-5"
+                            >
+                            <v-header class="pl-5" style="font-size: 15px">Unisex Jersey Short Sleeve V-Neck Tee</v-header>
+
+                            <div class="mt-8">
+                              <v-row>
+                              <h5 class="ml-8">Хэвлэх талууд</h5>
+                              <p style="font-size: 13px; color: #999999; margin-left: 200px">Боломжот 2 тал</p>
+                              </v-row>
+                              
+
+                              <div class="ml-5 mt-5">
+                                <img src="~/assets/print/upload-tshirt.png" class="sub-img">
+                                <img src="~/assets/print/upload-tshirt-back.png" class="sub-img">  
+                              </div>  
+                            </div>                            
+                            
+                            <v-tabs
+                            color="#25BC3D"
+                            class="ml-8"
+                            >
+                              <v-tab>
+                                Өнгө
+                              </v-tab>
+                              <v-tab>
+                                Хэмжээ
+                              </v-tab>
+                             <v-tab-item>
+                                   <v-radio-group
+                                            v-model="ex7"
+                                            column
+                                            class="ml-5"
+                                            >
+                                            <v-radio
+                                                label="White"
+                                                color="white"
+                                                value="White"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="Light gray"
+                                                color="light gray"
+                                                value="Light gray"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="Black"
+                                                color="black"
+                                                value="Black"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="Red"
+                                                color="red"
+                                                value="Red"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="orange"
+                                                color="orange"
+                                                value="orange"
+                                            ></v-radio>
+                                            <v-radio
+                                                label="yellow"
+                                                color="yellow"
+                                                value="yellow"
+                                            ></v-radio>
+                                            </v-radio-group>
+                            </v-tab-item>
+                            <v-tab-item>
+                              <div class="ml-8">
+                              <v-checkbox
+                                            label="2XS"
+                                            color="#25BC3D"
+                                            value="2XS"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="XS"
+                                            color="#25BC3D"
+                                            value="XS"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="S"
+                                            color="#25BC3D"
+                                            value="S"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="M"
+                                            color="#25BC3D"
+                                            value="M"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="L"
+                                            color="#25BC3D"
+                                            value="L"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="XL"
+                                            color="#25BC3D"
+                                            value="XL"
+                                            hide-details
+                                            ></v-checkbox>
+                                            <v-checkbox
+                                            label="2XL"
+                                            color="#25BC3D"
+                                            value="2XL"
+                                            hide-details
+                                            ></v-checkbox>
+                                            </div>
+                            </v-tab-item>
+                            </v-tabs>
+                          </v-list>
+                            </v-navigation-drawer>    
+                            </div>        
                 </template>
                 <v-card>
                   <v-card-title>
@@ -140,7 +269,8 @@
               <br />Maximum file size 50MB
               <br />Recommended size 3600 × 4200 px
             </p>
-            <v-btn color="#25BC3D" @click="$router.push('/mystore')">Add Brand</v-btn>
+            <!-- @click="$router.push('/mystore')" -->
+            <v-btn color="#25BC3D" href="/mystore">Add Brand</v-btn>
 
             <!-- nemsen -->
             <div class="area1 table-block">
@@ -208,14 +338,26 @@
 import Front from "../assets/print/upload-tshirt.png";
 import Back from "../assets/print/upload-tshirt-back.png";
 import VueResizable from "~/components/position.vue"
-
 export default {
   name: "App",
   components: { VueResizable },
+    watch: {
+      group () {
+        this.drawer = false
+      },
+    },
   data() {
     const tW = 150;
     const tH = 150;
     return ({
+      selectedItem: 1,
+      items: [
+        { text: 'Real-Time', icon: 'mdi-clock' },
+        { text: 'Audience', icon: 'mdi-account' },
+        { text: 'Conversions', icon: 'mdi-flag' },
+      ],
+      drawer: false,
+      group: null,
     defaultButtonText: "Create Brand",
     selectedFile: null,
     isSelecting: false,
@@ -225,7 +367,6 @@ export default {
     Width: 150,
     Height:150,
     dialog: false,
-
     handlers: ['r', 'rb', 'b', 'lb', 'l', 'lt', 't', 'rt'],
     left: `0px`, top: `0px`,
     height: tH, width: tW,
@@ -242,7 +383,6 @@ export default {
         : this.defaultButtonText;
     },
   },
-
   mounted() {
     this.preview = this.image1;
   },
@@ -256,7 +396,6 @@ export default {
         },
         { once: true }
       );
-
       this.$refs.uploader.click();
     },
     onFileChanged(e) {
@@ -271,7 +410,6 @@ export default {
     backside: function () {
       this.image1 = this.image2;
     },
-
     eHandler(data) {
       this.width = data.width;
       this.height = data.height;
@@ -286,7 +424,6 @@ export default {
       return typeof value !== "number" ? 0 : value;
     }
   },
-
   filters: {
     checkEmpty(value) {
       return typeof value !== "number" ? 0 : value;
@@ -304,8 +441,9 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
- .v-image__image--cover {
+</style>
+<style>
+.v-image__image--cover {
   background-size: contain;
 }
 .title {
@@ -343,8 +481,6 @@ export default {
   width: 241px;
   height: 150px;
 }
-
-
 .area1 {
   width: 250px;
   height: 250px;
@@ -355,7 +491,6 @@ export default {
   float: left;
   margin: 10px;
 }
-
 .area {
   position: absolute;
     z-index: 10;
@@ -365,7 +500,6 @@ export default {
     color: #333333;
     float: left;
     margin: 10px;
-
 }
 /* 
 #block1 {
@@ -375,7 +509,6 @@ export default {
   display: inline-block;
   float: left;
 } */
-
 .resizable {
   width: 150px;
   height: 150px;
@@ -384,25 +517,20 @@ export default {
   color: #ffffff;
   position: relative;
 }
-
 .table-block {
   display: table;
 }
-
 .table-row {
   display: table-row;
   text-align: center;
 }
-
 .table-cell {
   width: 50%;
   display: inline-block
 }
-
 .table-input {
   width: 50px
 }
-
 .drag-area-1, .drag-area-2 {
   width: 100%;
   height: 100%;
@@ -410,7 +538,6 @@ export default {
   text-align: center;
   cursor: pointer;
 }
-
 .table-area {
   width: 100%;
   display: flex;
@@ -418,5 +545,14 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+.float {
+  float: left;
+  margin-left: 3px;
+}
+.sub-img {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  border: solid #25BC3D 2px;
+}
 </style>

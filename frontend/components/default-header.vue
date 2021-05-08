@@ -4,9 +4,9 @@
             <nav class="nav">
                 <ul class="nav-bar">
                     <li class="nav-item">
-                        <div class="responsive-menu">
+                        <div class="responsive-menu" app>
                             <v-icon @click.stop="drawer = !drawer" class="d-flex d-sm-none">mdi-menu</v-icon>
-                        <v-navigation-drawer
+                        <v-navigation-drawer app
                             v-model="drawer"
                             absolute
                             :permanent="false"
@@ -24,22 +24,22 @@
                                 active-class="deep-purple--text text--accent-4"                                
                                 >
                                 <v-list-item>
-                                    <v-list-item-title><a class="link" @click="$router.push('/products')"><div class="slider"><span>Бүтээгдэхүүн</span></div></a></v-list-item-title>
+                                    <v-list-item-title><a class="link" href="/products"><div class="slider"><span>Бүтээгдэхүүн</span></div></a></v-list-item-title>
                                 </v-list-item>
 
                                 <v-list-item>
-                                    <v-list-item-title><a class="link" @click="$router.push('/how-it-works')"><div class="slider"><span>Хэрхэн ажилладаг</span></div></a></v-list-item-title>
+                                    <v-list-item-title><a class="link" href="/how-it-works"><div class="slider"><span>Хэрхэн ажилладаг</span></div></a></v-list-item-title>
                                 </v-list-item>
 
                                 <v-list-item>
-                                    <v-list-item-title><a class="link" @click="$router.push('/service')"><div class="slider"><span>Үйлчилгээ</span></div></a></v-list-item-title>
+                                    <v-list-item-title><a class="link" href="/service"><div class="slider"><span>Үйлчилгээ</span></div></a></v-list-item-title>
                                 </v-list-item>
 
                                 <v-list-item>
                                     <v-list-item-title><a class="link" href="#"><div class="slider"><span>Мэдлэгийн сан</span></div></a></v-list-item-title>
                                 </v-list-item>
                                 <v-list-item>
-                                    <v-list-item-title><a class="link nav-item-extra" @click="$router.push('/mystore')"><div class="link-item"><span class=""><v-icon>mdi-home</v-icon>Миний дэлгүүр</span></div></a></v-list-item-title>
+                                    <v-list-item-title><a class="link nav-item-extra" href="/mystore"><div class="link-item"><span class=""><v-icon>mdi-home</v-icon>Миний дэлгүүр</span></div></a></v-list-item-title>
                                 </v-list-item>
                                 <v-list-item>
                                     <v-list-item-title><a class="link nav-item-extra" href="#"><div class="link-item"><span class=""><v-icon large color="#25BC3D" class="pr-4">mdi-account-circle</v-icon>Profile</span></div></a></v-list-item-title>
@@ -49,13 +49,13 @@
                             </v-navigation-drawer>
                         </div></li>
                     <li class="nav-item"><a class="link nav-item-extra" href="#"><div class="link-item d-none d-sm-flex"><span class=""><v-icon large color="#25BC3D" class="pr-4">mdi-account-circle</v-icon></span></div></a></li>
-                    <li class="nav-item"><a class="link nav-item-extra" @click="$router.push('/mystore')"><div class="link-item d-none d-sm-flex"><span class=""><v-icon>mdi-home</v-icon>Миний дэлгүүр</span></div></a></li>
+                    <li class="nav-item"><a class="link nav-item-extra" href="/mystore"><div class="link-item d-none d-sm-flex"><span class=""><v-icon>mdi-home</v-icon>Миний дэлгүүр</span></div></a></li>
                     <li class="nav-item"><a class="link" href="#"><div class="link-item d-none d-lg-flex d-xl-none"><span>Мэдлэгийн сан</span></div></a></li>
                     <!-- <li class="nav-item"><a class="link" href="#"><div class="link-item"><span>Блог</span></div></a></li> -->
-                    <li class="nav-item"><a class="link" @click="$router.push('/service')"><div class="link-item d-none d-sm-flex"><span>Үйлчилгээ</span></div></a></li>
-                    <li class="nav-item"><a class="link" @click="$router.push('/how-it-works')"><div class="link-item d-none d-lg-flex d-xl-none"><span>Хэрхэн ажилладаг</span></div></a></li>
-                    <li class="nav-item"><a class="link" @click="$router.push('/products')"><div class="link-item d-none d-sm-flex"><span>Бүтээгдэхүүн</span></div></a></li>
-                    <li class="logo"><a class="link" @click="$router.push('/')"><div class="link-item"><img src="~/assets/logo/printon.png" alt="printon-logo"></div></a></li>
+                    <li class="nav-item"><a class="link" href="/service"><div class="link-item d-none d-sm-flex"><span>Үйлчилгээ</span></div></a></li>
+                    <li class="nav-item"><a class="link" href="/how-it-works"><div class="link-item d-none d-lg-flex d-xl-none"><span>Хэрхэн ажилладаг</span></div></a></li>
+                    <li class="nav-item"><a class="link" href="/products"><div class="link-item d-none d-sm-flex"><span>Бүтээгдэхүүн</span></div></a></li>
+                    <li class="logo"><a class="link" href="/"><div class="link-item"><img src="~/assets/logo/printon.png" alt="printon-logo"></div></a></li>
                 </ul>
             </nav>
         </div>

@@ -10,9 +10,9 @@
               <v-col>
                 <h3>Website</h3>
                   <ul class="footer-bar">
-                    <li class="footer-item"><a class="footer-link" href="#"><div class="footer-link-item"><span>Бүтээгдэхүүн</span></div></a></li>
-                    <li class="footer-item"><a class="footer-link" href="#"><div class="footer-link-item"><span>Хэрхэн ажилладаг</span></div></a></li>
-                    <li class="footer-item"><a class="footer-link" href="#"><div class="footer-link-item"><span>Үйлчилгээ</span></div></a></li>
+                    <li class="footer-item"><a class="footer-link" href="/products"><div class="footer-link-item"><span>Бүтээгдэхүүн</span></div></a></li>
+                    <li class="footer-item"><a class="footer-link" href="/how-it-works"><div class="footer-link-item"><span>Хэрхэн ажилладаг</span></div></a></li>
+                    <li class="footer-item"><a class="footer-link" href="/service"><div class="footer-link-item"><span>Үйлчилгээ</span></div></a></li>
                     <li class="footer-item"><a class="footer-link" href="#"><div class="footer-link-item"><span>Блог</span></div></a></li>
                     <li class="footer-item"><a class="footer-link" href="#"><div class="footer-link-item"><span>Мэдлэгийн сан</span></div></a></li>
                 </ul>
