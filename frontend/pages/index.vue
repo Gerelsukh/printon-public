@@ -265,7 +265,114 @@
 
     <div class="lcontainer6">
       <div class="title"><h2>Үйлчлүүлэгчдийн бүтээсэн Бренд</h2></div>
-          
+          <v-sheet
+            class="mx-auto"
+            width="1200"
+          >
+            <v-slide-group
+              v-model="model"
+              class="pa-4"
+              show-arrows
+            >
+              <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer1.png" style="width: 180px: height: 180px" class="mx-2 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+               <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer2.png" style="width: 180px: height: 180px" class="mx-2 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+               <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer3.png" style="width: 180px: height: 180px" class="mx-2 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+               <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer4.png" style="width: 180px: height: 180px" class="mx-5 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+              <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer1.png" style="width: 180px: height: 180px" class="mx-2 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+               <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer2.png" style="width: 180px: height: 180px" class="mx-2 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+               <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer3.png" style="width: 180px: height: 180px" class="mx-2 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+               <v-slide-item>
+                <v-card
+                  color="white"
+                  class="ma-4 customer"
+                  height="300"
+                  width="200"
+                >
+                <img src="~/assets/Landing-page/customer4.png" style="width: 180px: height: 180px" class="mx-5 mt-2 customer">
+                <v-card-title>Sweet shirt</v-card-title>
+                <v-card-subtitle>₮18,000</v-card-subtitle>
+                </v-card>
+              </v-slide-item>
+            </v-slide-group>
+            
+      </v-sheet>
     </div>
     <Footer/>
   </div>
